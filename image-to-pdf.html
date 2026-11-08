@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تحويل الصور إلى PDF مجاناً | أدوات PDF بالعربي</title>
+<meta name="description" content="ادمج عدة صور في ملف PDF واحد مجاناً من المتصفح، كل صورة في صفحة، بدون تسجيل.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="m-text" data-start="2">
+<header class="hero"><div class="hero-in">
+ <div><h1>حوّل الصور إلى ملف <span>PDF</span></h1><p>اختاري عدة صور وادمجيها في ملف واحد، كل صورة في صفحة.</p></div>
+ <div class="sheet" aria-hidden="true"><i></i><i></i><i></i><i></i><b>PDF</b></div>
+</div></header>
+
+<main>
+ <section class="card">
+  <div class="tabs" role="tablist">
+   <button class="tab" role="tab" id="t1" aria-selected="true" aria-controls="p1">نص إلى PDF</button>
+   <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2">صورة إلى PDF</button>
+  </div>
+
+  <div id="p1" role="tabpanel" aria-labelledby="t1">
+   <label for="title">العنوان (اختياري)</label>
+   <input type="text" id="title" placeholder="مثال: خطاب طلب إجازة">
+   <div style="height:12px"></div>
+   <label for="text">النص</label>
+   <textarea id="text" placeholder="اكتبي أو الصقي النص هنا"></textarea>
+   <div class="row">
+    <div><label for="size">حجم الخط</label><select id="size"><option value="14">صغير</option><option value="17" selected>متوسط</option><option value="21">كبير</option></select></div>
+    <div><label for="dir">اتجاه النص</label><select id="dir"><option value="rtl" selected>من اليمين (عربي)</option><option value="ltr">من اليسار (English)</option></select></div>
+    <div><label for="gap">تباعد الأسطر</label><select id="gap"><option value="1.5">عادي</option><option value="1.9" selected>مريح</option><option value="2.3">واسع</option></select></div>
+    <div><label for="page">حجم الورقة</label><select id="page"><option value="A4" selected>A4</option><option value="Letter">Letter</option></select></div>
+   </div>
+   <button class="go" id="go1" type="button">احفظ كـ PDF</button>
+  </div>
+
+  <div id="p2" role="tabpanel" aria-labelledby="t2" class="hidden">
+   <label class="drop" for="files">اضغطي لاختيار الصور<small>كل صورة تصير صفحة في الملف</small></label>
+   <input type="file" id="files" accept="image/*" multiple style="position:absolute;opacity:0;width:1px;height:1px">
+   <div class="thumbs" id="thumbs"></div>
+   <label for="page2">حجم الورقة</label>
+   <select id="page2"><option value="A4" selected>A4</option><option value="Letter">Letter</option></select>
+   <div style="height:12px"></div>
+   <button class="go" id="go2" type="button">احفظ كـ PDF</button>
+  </div>
+  <p class="hint">بعد الضغط تفتح نافذة الطباعة. اختاري «حفظ كـ PDF» بدل الطابعة. لو ما فتحت، افتحي الصفحة في المتصفح مباشرة.</p>
+ </section>
+
+ <div class="feats"><div>مجاني بالكامل</div><div>ملفاتك تبقى على جهازك</div><div>يدعم العربية</div></div>
+
+ <section id="textprint"><h2>معاينة النص</h2><div class="paper" id="paper"><h3 id="pt"></h3><div id="pb"></div></div></section>
+ <section id="imgprint"></section>
+ <nav class="links"><a href="index.html">نص إلى PDF</a><a href="image-to-pdf.html">صورة إلى PDF</a><a href="privacy.html">سياسة الخصوصية</a></nav><section class="faq"><h2>أسئلة شائعة</h2><details><summary>كيف أرتب الصفحات؟</summary><p>تظهر الصفحات بنفس ترتيب اختيارك للصور، ويمكنك حذف أي صورة قبل الحفظ.</p></details><details><summary>ما صيغ الصور المدعومة؟</summary><p>أي صيغة يعرضها المتصفح، مثل JPG وPNG.</p></details><details><summary>هل تُرفع صوري إلى الإنترنت؟</summary><p>لا، تبقى الصور على جهازك ولا تُرسل إلى أي خادم.</p></details></section><footer>أدوات PDF بالعربي</footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
